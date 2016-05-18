@@ -9,20 +9,20 @@
 #import "ViewController.h"
 #import "CJHospital.h"
 
-#define PAGESIZE 10
-
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
 
+static NSString *identifier = @"cell";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self configSuperViewUI];
+    [self configSuperViewFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier];
     
     [self addMJRefreshHeader:YES addFooter:YES];
     
@@ -41,9 +41,9 @@
 }
 */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     if (self.dataArray.count) {
         CJHospital *hospital = self.dataArray[indexPath.row];
@@ -58,7 +58,7 @@
     
     NSString *webString = @"http://101.231.75.25:8080/jkms-app-test/higherHealth/testPackageView.do";
     
-    NSDictionary *parameters = @{@"page":[NSString stringWithFormat:@"%ld",self.currPage],@"rows":@"10"};
+    NSDictionary *parameters = @{@"page":[NSString stringWithFormat:@"%ld",self.currPage],@"rows":PAGESIZESTRING};
     
     [CJHttpRequest POSTwithUrl:webString parameters:parameters success:^(id responseObject) {
         NSLog(@"数据刷新success");
@@ -70,7 +70,7 @@
         }
         [self.tableView reloadData];
         
-        if (!array.count) {
+        if (array.count < PAGESIZE) {
             [self.tableView.footer noticeNoMoreData];
         }else{
             [self.tableView.header endRefreshing];
@@ -79,6 +79,8 @@
 
     } failure:^(NSError *error) {
         NSLog(@"数据刷新failure");
+        [self.tableView.header endRefreshing];
+        [self.tableView.footer endRefreshing];
     }];
     
 }

@@ -33,7 +33,7 @@
 /**
  *  配置父视图UI(tableView)
  */
-- (void)configSuperViewUI;
+- (void)configSuperViewFrame:(CGRect)frame;
 
 /**
  *  刷新头视图和尾视图(tableView)
@@ -41,5 +41,4 @@
 - (void)addMJRefreshHeader:(BOOL)isHaveHeader addFooter:(BOOL)isHaveFooter;
 
 //- (void)isOpenAutomaticRefresh:(BOOL)isOpen;
-- (void)addCustomAlertWithMsg:(NSString *)message;
 @end

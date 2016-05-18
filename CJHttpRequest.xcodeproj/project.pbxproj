@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F53DA2821CEC4AAD00B2B738 /* CJTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F53DA2811CEC4AAD00B2B738 /* CJTools.m */; };
+		F53DA2851CEC4F4C00B2B738 /* CJResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F53DA2841CEC4F4C00B2B738 /* CJResponse.m */; };
 		F55BF81E1CE1ADBF005A2804 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F55BF81D1CE1ADBF005A2804 /* BViewController.m */; };
+		F595D8F31CEAC57D002CE871 /* CJBaseNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F595D8F21CEAC57D002CE871 /* CJBaseNaviViewController.m */; };
+		F595D8FA1CEAED02002CE871 /* CViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F595D8F91CEAED02002CE871 /* CViewController.m */; };
 		F5A9C3321CE06AEA0029C2AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9C3311CE06AEA0029C2AE /* main.m */; };
 		F5A9C3351CE06AEA0029C2AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9C3341CE06AEA0029C2AE /* AppDelegate.m */; };
 		F5A9C33B1CE06AEA0029C2AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5A9C3391CE06AEA0029C2AE /* Main.storyboard */; };
@@ -71,8 +75,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F53DA2801CEC4AAD00B2B738 /* CJTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTools.h; sourceTree = "<group>"; };
+		F53DA2811CEC4AAD00B2B738 /* CJTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTools.m; sourceTree = "<group>"; };
+		F53DA2831CEC4F4C00B2B738 /* CJResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJResponse.h; sourceTree = "<group>"; };
+		F53DA2841CEC4F4C00B2B738 /* CJResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJResponse.m; sourceTree = "<group>"; };
 		F55BF81C1CE1ADBF005A2804 /* BViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
 		F55BF81D1CE1ADBF005A2804 /* BViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
+		F595D8F11CEAC57D002CE871 /* CJBaseNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseNaviViewController.h; sourceTree = "<group>"; };
+		F595D8F21CEAC57D002CE871 /* CJBaseNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBaseNaviViewController.m; sourceTree = "<group>"; };
+		F595D8F81CEAED02002CE871 /* CViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CViewController.h; sourceTree = "<group>"; };
+		F595D8F91CEAED02002CE871 /* CViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CViewController.m; sourceTree = "<group>"; };
 		F5A9C32D1CE06AE90029C2AE /* CJHttpRequest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJHttpRequest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A9C3311CE06AEA0029C2AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F5A9C3331CE06AEA0029C2AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -189,6 +201,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F53DA27F1CEC4AAD00B2B738 /* CJTools */ = {
+			isa = PBXGroup;
+			children = (
+				F53DA2801CEC4AAD00B2B738 /* CJTools.h */,
+				F53DA2811CEC4AAD00B2B738 /* CJTools.m */,
+			);
+			path = CJTools;
+			sourceTree = "<group>";
+		};
 		F5A9C3241CE06AE90029C2AE = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +242,7 @@
 				F5A9C3BF1CE080300029C2AE /* MJExtension */,
 				F5A9C3861CE06B670029C2AE /* Helpers */,
 				F5A9C3631CE06B0B0029C2AE /* AFNetworking */,
+				F53DA27F1CEC4AAD00B2B738 /* CJTools */,
 				F5A9C3391CE06AEA0029C2AE /* Main.storyboard */,
 				F5A9C33C1CE06AEA0029C2AE /* Assets.xcassets */,
 				F5A9C33E1CE06AEA0029C2AE /* LaunchScreen.storyboard */,
@@ -288,6 +310,8 @@
 			children = (
 				F5A9C3871CE06B670029C2AE /* CJHttpRequest.h */,
 				F5A9C3881CE06B670029C2AE /* CJHttpRequest.m */,
+				F53DA2831CEC4F4C00B2B738 /* CJResponse.h */,
+				F53DA2841CEC4F4C00B2B738 /* CJResponse.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -295,12 +319,16 @@
 		F5A9C38A1CE06BC30029C2AE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F595D8F11CEAC57D002CE871 /* CJBaseNaviViewController.h */,
+				F595D8F21CEAC57D002CE871 /* CJBaseNaviViewController.m */,
 				F5A9C3901CE06BE90029C2AE /* CJBaseViewController.h */,
 				F5A9C3911CE06BE90029C2AE /* CJBaseViewController.m */,
 				F5A9C38B1CE06BC30029C2AE /* ViewController.h */,
 				F5A9C38C1CE06BC30029C2AE /* ViewController.m */,
 				F55BF81C1CE1ADBF005A2804 /* BViewController.h */,
 				F55BF81D1CE1ADBF005A2804 /* BViewController.m */,
+				F595D8F81CEAED02002CE871 /* CViewController.h */,
+				F595D8F91CEAED02002CE871 /* CViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -537,11 +565,15 @@
 				F5A9C3DD1CE080300029C2AE /* NSObject+MJProperty.m in Sources */,
 				F5A9C3B21CE072F40029C2AE /* MJRefreshGifHeader.m in Sources */,
 				F5A9C3791CE06B0B0029C2AE /* AFHTTPSessionManager.m in Sources */,
+				F53DA2821CEC4AAD00B2B738 /* CJTools.m in Sources */,
 				F5A9C3D51CE080300029C2AE /* MJExtensionConst.m in Sources */,
 				F5A9C3B51CE072F40029C2AE /* MJRefreshLegendHeader.m in Sources */,
+				F53DA2851CEC4F4C00B2B738 /* CJResponse.m in Sources */,
 				F5A9C3E11CE080860029C2AE /* CJHospital.m in Sources */,
+				F595D8F31CEAC57D002CE871 /* CJBaseNaviViewController.m in Sources */,
 				F5A9C3B81CE072F40029C2AE /* UIView+MJExtension.m in Sources */,
 				F5A9C3891CE06B670029C2AE /* CJHttpRequest.m in Sources */,
+				F595D8FA1CEAED02002CE871 /* CViewController.m in Sources */,
 				F5A9C37D1CE06B0B0029C2AE /* AFURLRequestSerialization.m in Sources */,
 				F5A9C3B31CE072F40029C2AE /* MJRefreshHeader.m in Sources */,
 				F5A9C3921CE06BE90029C2AE /* CJBaseViewController.m in Sources */,

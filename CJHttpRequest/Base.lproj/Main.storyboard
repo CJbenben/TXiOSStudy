@@ -56,6 +56,26 @@
                                             <segue destination="BYZ-38-t0r" kind="push" id="1aN-rg-d8d"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ItB-uY-EPZ" rowHeight="100" style="IBUITableViewCellStyleDefault" id="aPW-zJ-oM7">
+                                        <rect key="frame" x="0.0" y="264" width="600" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aPW-zJ-oM7" id="EYX-CH-5EE">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="GET请求" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ItB-uY-EPZ">
+                                                    <rect key="frame" x="15" y="0.0" width="550" height="99"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="4qJ-fu-e90" kind="push" id="mbQ-PJ-TLh"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -87,7 +107,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2146" y="356"/>
+            <point key="canvasLocation" x="2188" y="-40"/>
+        </scene>
+        <!--GET请求-->
+        <scene sceneID="KwV-bC-Qmd">
+            <objects>
+                <viewController id="4qJ-fu-e90" customClass="CViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2FU-WA-toJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="tgs-Ri-gjA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hjh-9h-m92">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="GET请求" id="2hS-DI-Tn2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Is-bH-FBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2188" y="683"/>
         </scene>
         <!--刷新网页-->
         <scene sceneID="A17-ip-MzM">
@@ -106,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FF8-aG-S3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2146" y="-364"/>
+            <point key="canvasLocation" x="2156" y="-772"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LxP-be-3bY">

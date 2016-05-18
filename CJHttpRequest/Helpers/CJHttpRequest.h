@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CJResponse.h"
 
 typedef NS_ENUM(NSUInteger,HttpRequestType) {
     /*  get请求  */
@@ -32,11 +33,9 @@ typedef NS_ENUM(NSUInteger,HttpRequestType) {
  */
 @property (assign, nonatomic) HttpRequestType type;
 
-- (void)getData:(CJHttpRequest *)request success:(void (^)(id result))success failure:(void (^)(NSError *error))failure;
+- (AFHTTPRequestOperation *)getData:(CJHttpRequest *)request success:(void (^)(id result))success failure:(void (^)(NSError *error))failure;
 
 
-
-- (void)GETwithUrl:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 /**
  *  发送get请求
  *
@@ -45,10 +44,9 @@ typedef NS_ENUM(NSUInteger,HttpRequestType) {
  *  @param success 请求成功的回调
  *  @param failure 请求失败的回调
  */
-+ (void)GETwithUrl:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
++ (AFHTTPRequestOperation *)GETwithUrl:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
 
-- (instancetype)POSTwithUrl:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 /**
  *  发送post请求
  *
@@ -57,10 +55,9 @@ typedef NS_ENUM(NSUInteger,HttpRequestType) {
  *  @param success 请求成功的回调
  *  @param failure 请求失败的回调
  */
-+ (instancetype)POSTwithUrl:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
++ (AFHTTPRequestOperation *)POSTwithUrl:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
 
-- (void)requestDataWithUrl:(NSString *)url parameters:(NSDictionary *)parameters type:(HttpRequestType)type success:(void (^)(id result))success failure:(void (^)(NSError *error))failure;
 /**
  *  发送网络请求
  *
@@ -70,6 +67,6 @@ typedef NS_ENUM(NSUInteger,HttpRequestType) {
  *  @param success 请求的结果
  *  @param failure 请求失败
  */
-+ (void)requestDataWithUrl:(NSString *)url parameters:(NSDictionary *)parameters type:(HttpRequestType)type success:(void (^)(id result))success failure:(void (^)(NSError *error))failure;
++ (AFHTTPRequestOperation *)requestDataWithUrl:(NSString *)url parameters:(NSDictionary *)parameters type:(HttpRequestType)type success:(void (^)(id result))success failure:(void (^)(NSError *error))failure;
 
 @end

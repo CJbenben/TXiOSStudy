@@ -8,7 +8,7 @@
 
 #import "CJHttpRequest.h"
 
-#define REQUERT_TIMEOUT         100
+#define REQUERT_TIMEOUT         15
 
 @implementation CJHttpRequest
 
@@ -153,29 +153,6 @@
     
     return true;
 }
-
-
-- (void)addCustomAlertWithMsg:(NSString *)message{
-
-}
-
-
-//- (BOOL) afterExecute:(LResponse *) response {
-//    
-//    if (response.error == nil) {
-//        return TRUE;
-//    }
-//    
-//    if ([response.error code] == NSURLErrorNotConnectedToInternet) {
-////        [self alertErrorMessage:@"网络不给力"];
-//        return FALSE;
-//    }
-//    
-//    NSLog(@"server error text is %@", response.text);
-////    [self alertErrorMessage:@"服务器故障，请稍后再试。"];
-//    
-//    return true;
-//}
 
 #pragma mark -
 #pragma mark - POST/GET网络请求

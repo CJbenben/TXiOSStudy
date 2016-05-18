@@ -8,6 +8,6 @@
 
 #import "CJBaseViewController.h"
 
-@interface BViewController : UIViewController//CJBaseViewController
+@interface BViewController : CJBaseViewController
 
 @end

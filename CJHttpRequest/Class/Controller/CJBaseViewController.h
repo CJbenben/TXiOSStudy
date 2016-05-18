@@ -10,6 +10,8 @@
 
 @interface CJBaseViewController : UIViewController
 
+@property (strong, nonatomic) JGProgressHUD *HUD;
+
 @property (strong, nonatomic) AFHTTPRequestOperation *operation;
 
 @property (strong, nonatomic) UITableView *tableView;

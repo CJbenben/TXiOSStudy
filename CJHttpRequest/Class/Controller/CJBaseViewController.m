@@ -33,6 +33,14 @@ NSString *kReachabilityChangedNotification = @"kNetworkReachabilityChangedNotifi
 @implementation CJBaseViewController
 #pragma mark -
 #pragma mark - 懒加载
+- (JGProgressHUD *)HUD{
+    if (_HUD == nil) {
+        _HUD = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];
+        _HUD.textLabel.text = @"正在拼命加载中";
+    }
+    return _HUD;
+}
+
 - (NSMutableArray *)dataArray{
     if (!_dataArray) {
         _dataArray = [NSMutableArray array];

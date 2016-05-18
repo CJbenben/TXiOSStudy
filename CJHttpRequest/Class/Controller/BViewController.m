@@ -1,41 +1,42 @@
 //
-//  CViewController.m
+//  BViewController.m
 //  CJHttpRequest
 //
-//  Created by ChenJie on 16/5/17.
+//  Created by ChenJie on 16/5/10.
 //  Copyright © 2016年 ChenJie. All rights reserved.
 //
 
-#import "CViewController.h"
+#import "BViewController.h"
 
-#define kCJWEATHER_KEY              @"8880f93f279f023e0f0820bf48c74875"         //聚合数据key
-
-@interface CViewController ()
+@interface BViewController ()
 
 @end
 
-@implementation CViewController
+@implementation BViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self getRequest];
+    [self getDataMethod];
 }
 
-
-- (void)getRequest{
-//    NSString *string = @"http://v.juhe.cn/weather/index?format=2&cityname=%E8%8B%8F%E5%B7%9E&key=您申请的KEY";
+- (void)getDataMethod{
+    [self.HUD showInView:self.view];
     
-    NSString *webString = @"http://v.juhe.cn/weather/index?";
+    NSString *webString = @"http://101.231.75.25:8080/jkms-app-test/product/productDetail.do";
+    NSDictionary *parameters = @{@"userId":@"10",@"id":@"1"};
     
-    NSDictionary *parameters = @{@"cityname":@"上海",@"key":kCJWEATHER_KEY,@"format":@"1",@"dtype":@"json"};
-    
-    [CJHttpRequest GETwithUrl:webString parameters:parameters success:^(id responseObject) {
+    [CJHttpRequest POSTwithUrl:webString parameters:parameters success:^(id responseObject) {
+        
+        [self.HUD dismissAnimated:YES];
         [CJShowAlertMsg cjShowAlertMessage:@"数据获取成功"];
+        
     } failure:^(NSError *error) {
         
+        [self.HUD dismissAnimated:YES];
+        
     }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

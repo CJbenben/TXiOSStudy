@@ -6,8 +6,8 @@
 //  Copyright © 2016年 ChenJie. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CJBaseViewController.h"
 
-@interface CViewController : UIViewController
+@interface CViewController : CJBaseViewController
 
 @end

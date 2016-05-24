@@ -10,9 +10,9 @@
 
 @interface CJBaseViewController : UIViewController
 
-@property (strong, nonatomic) JGProgressHUD *HUD;
-
 @property (strong, nonatomic) AFHTTPRequestOperation *operation;
+
+@property (strong, nonatomic) JGProgressHUD *HUD;
 
 @property (strong, nonatomic) UITableView *tableView;
 
@@ -30,7 +30,6 @@
  */
 @property (assign, nonatomic) NSInteger totalNumber;
 
-- (void)checkWebWeatherInter;
 
 /**
  *  配置父视图UI(tableView)
@@ -42,5 +41,4 @@
  */
 - (void)addMJRefreshHeader:(BOOL)isHaveHeader addFooter:(BOOL)isHaveFooter;
 
-//- (void)isOpenAutomaticRefresh:(BOOL)isOpen;
 @end

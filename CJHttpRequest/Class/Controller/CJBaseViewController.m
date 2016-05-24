@@ -12,22 +12,10 @@ NSString *kReachabilityChangedNotification = @"kNetworkReachabilityChangedNotifi
 
 @interface CJBaseViewController ()<UITableViewDataSource, UITableViewDelegate>
 /**
- *  网络状态
- */
-@property (assign, nonatomic) AFNetworkReachabilityStatus networkState;
-
-@property (strong, nonatomic) UIView *bgView;
-
-@property (assign, nonatomic) BOOL isCheckState;
-/**
- *  不是表格、子类重写
- */
-- (void)getDataMethod;
-
-/**
  *  获取表格数据、子类重写
  */
 - (void)getDataWithTableView;
+
 @end
 
 @implementation CJBaseViewController
@@ -42,7 +30,7 @@ NSString *kReachabilityChangedNotification = @"kNetworkReachabilityChangedNotifi
 }
 
 - (NSMutableArray *)dataArray{
-    if (!_dataArray) {
+    if (_dataArray == nil) {
         _dataArray = [NSMutableArray array];
     }
     return _dataArray;
@@ -62,7 +50,6 @@ NSString *kReachabilityChangedNotification = @"kNetworkReachabilityChangedNotifi
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self checkWebWeatherInter];
 }
 
 
@@ -100,7 +87,7 @@ NSString *kReachabilityChangedNotification = @"kNetworkReachabilityChangedNotifi
 }
 
 - (void)getDataWithTableView{
-    NSLog(@"刷新有网络，子类需要重写加载数据");
+    NSLog(@"子类需要重写加载数据");
 }
 
 
@@ -125,80 +112,6 @@ NSString *kReachabilityChangedNotification = @"kNetworkReachabilityChangedNotifi
     HidenKeybord;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/*
-- (void)checkNetworkState2{
-    self.networkState = AFNetworkReachabilityStatusReachableViaWWAN;
-    
-    if (self.networkState == AFNetworkReachabilityStatusReachableViaWWAN || self.networkState == AFNetworkReachabilityStatusReachableViaWiFi) {
-        if (!self.dataArray.count) {
-            self.currPage = 1;
-        }else{
-            self.currPage ++;
-        }
-        [self getDataWithTableView];
-    }else{
-        NSLog(@"断网、结束上拉加载或下拉刷新");
-        [self haveNoNetwork];
-        [self.tableView.header endRefreshing];
-        [self.tableView.footer endRefreshing];
-    }
-}
-
-
-- (void)checkWebWeatherInter{
-    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
-    
-    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        switch (self.networkState = status) {
-            case AFNetworkReachabilityStatusUnknown:
-                NSLog(@"未识别的网络");
-                [self haveNoNetwork];
-                break;
-                
-            case AFNetworkReachabilityStatusNotReachable:
-                NSLog(@"不可达的网络(未连接)");
-                [self haveNoNetwork];
-                break;
-                
-            case AFNetworkReachabilityStatusReachableViaWWAN:
-                NSLog(@"2G、3G、4G网络");
-                [self getDataMethod];
-                break;
-                
-            case AFNetworkReachabilityStatusReachableViaWiFi:
-                NSLog(@"wifi的网络");
-                [self getDataMethod];
-                break;
-            default:
-                break;
-        }
-    }];
-    
-    [manager startMonitoring];
-}
-
-
-- (void)haveNoNetwork{
-    NSLog(@"网络无法连接、子类不需要任何处理");
-    SHOWALERT(@"检查网络设置");
-    self.isCheckState = YES;
-}
-
-- (void)getDataMethod{
-    NSLog(@"父类方法getDataMethod");
-}
-*/
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -21,10 +21,40 @@ static NSString *identifier = @"cell";
     [super viewDidLoad];
     
     [self configSuperViewFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [self addMJRefreshHeader:YES addFooter:YES];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier];
     
-    [self addMJRefreshHeader:YES addFooter:YES];
+}
+
+- (void)getDataWithTableView{
+    NSLog(@"子类正在重写父类getDataWithTableView方法");
+    
+    NSString *webString = @"http://101.231.75.25:8080/jkms-app-test/higherHealth/testPackageView.do";
+    
+    NSDictionary *parameters = @{@"page":[NSString stringWithFormat:@"%ld",self.currPage],@"rows":PAGESIZESTRING};
+    
+    [CJHttpRequest POSTwithUrl:webString parameters:parameters success:^(id responseObject) {
+        NSLog(@"数据刷新success");
+        NSArray *array = [CJHospital mj_objectArrayWithKeyValuesArray:[responseObject objectForKey:@"msg"][@"rows"]];
+        for (CJHospital *hospital in array) {
+//            NSLog(@"rows:%@",hospital.hosName);
+            [self.dataArray addObject:hospital];
+        }
+        [self.tableView reloadData];
+        
+        if (array.count < PAGESIZE) {
+            [self.tableView.footer noticeNoMoreData];
+        }else{
+            [self.tableView.header endRefreshing];
+            [self.tableView.footer endRefreshing];
+        }
+        
+    } failure:^(NSError *error) {
+        NSLog(@"数据刷新failure");
+        [self.tableView.header endRefreshing];
+        [self.tableView.footer endRefreshing];
+    }];
     
 }
 
@@ -52,37 +82,10 @@ static NSString *identifier = @"cell";
     return cell;
 }
 
-
-- (void)getDataWithTableView{
-    NSLog(@"子类正在重写父类getDataWithTableView方法");
-    
-    NSString *webString = @"http://101.231.75.25:8080/jkms-app-test/higherHealth/testPackageView.do";
-    
-    NSDictionary *parameters = @{@"page":[NSString stringWithFormat:@"%ld",self.currPage],@"rows":PAGESIZESTRING};
-    
-    [CJHttpRequest POSTwithUrl:webString parameters:parameters success:^(id responseObject) {
-        NSLog(@"数据刷新success");
-//        NSLog(@"responseObject:%@",responseObject);
-        NSArray *array = [CJHospital mj_objectArrayWithKeyValuesArray:[responseObject objectForKey:@"msg"][@"rows"]];
-        for (CJHospital *hospital in array) {
-//            NSLog(@"rows:%@",hospital.hosName);
-            [self.dataArray addObject:hospital];
-        }
-        [self.tableView reloadData];
-        
-        if (array.count < PAGESIZE) {
-            [self.tableView.footer noticeNoMoreData];
-        }else{
-            [self.tableView.header endRefreshing];
-            [self.tableView.footer endRefreshing];
-        }
-
-    } failure:^(NSError *error) {
-        NSLog(@"数据刷新failure");
-        [self.tableView.header endRefreshing];
-        [self.tableView.footer endRefreshing];
-    }];
-    
+#pragma mark -
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"indexPath.row:%ld",indexPath.row);
 }
 
 - (void)didReceiveMemoryWarning {

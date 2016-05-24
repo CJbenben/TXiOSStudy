@@ -1,6 +1,6 @@
 //
 //  CJHttpRequest.h
-//  BBAfnetWorkingSecond封装
+//  CJHttpRequest
 //
 //  Created by ChenJie on 16/4/20.
 //  Copyright © 2016年 ChenJie. All rights reserved.

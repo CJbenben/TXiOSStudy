@@ -1,6 +1,6 @@
 //
 //  CJHttpRequest.m
-//  BBAfnetWorkingSecond封装
+//  CJHttpRequest
 //
 //  Created by ChenJie on 16/4/20.
 //  Copyright © 2016年 ChenJie. All rights reserved.
@@ -129,27 +129,25 @@
         }
     }];
     [manager.reachabilityManager startMonitoring];
-    return true;
+    return YES;
 }
 
 - (BOOL)showAlertMsgWithWebResult:(CJResponse *)response {
     
     if (response.error == nil) {
-        return TRUE;
+        return YES;
     }
     
     if (response.code == NSURLErrorNotConnectedToInternet) {
         [CJShowAlertMsg cjShowAlertMessage:@"检查网络设置"];
-        return FALSE;
+        return NO;
     }else if (response.code == NSURLErrorTimedOut){
         [CJShowAlertMsg cjShowAlertMessage:@"请求超时"];
-        return FALSE;
+        return NO;
     }else if (response.code == NSURLErrorCancelled){
         NSLog(@"用户取消了请求");
-        return FALSE;
+        return NO;
     }
-    
-//    [self alertErrorMessage:@"服务器故障，请稍后再试。"];
     
     return true;
 }
@@ -182,4 +180,5 @@
 - (AFHTTPRequestOperation *)getData:(CJHttpRequest *)request success:(void (^)(id result))success failure:(void (^)(NSError *error))failure{
     return [request requestDataWithUrl:request.urlString parameters:request.parameters type:request.type success:success failure:failure];
 }
+
 @end

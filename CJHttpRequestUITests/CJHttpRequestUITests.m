@@ -37,12 +37,12 @@
     NSLog(@"this is master");
 }
 
-- (void)testVersion_1_1 {
-    
+- (void)testVersion_1_2 {
+    NSLog(@"this is version1.1");
 }
 
-- (void)testVersion_1_2 {
-    
+- (void)testVersion_1_1 {
+    NSLog(@"this is branch  version1.1");
 }
 
 - (void)tearDown {

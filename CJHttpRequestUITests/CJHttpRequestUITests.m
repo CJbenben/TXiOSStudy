@@ -28,7 +28,13 @@
 }
 
 - (void)testBranch {
-    NSLog(@"this is version1.1");
+//<<<<<<< HEAD
+//    NSLog(@"this is version1.1");
+//=======
+//    NSLog(@"this is branch  version1.2");
+//>>>>>>> version1.2
+    
+    NSLog(@"this is master");
 }
 
 - (void)tearDown {

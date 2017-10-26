@@ -28,10 +28,17 @@
 }
 
 - (void)testBranch {
+//<<<<<<< HEAD
     NSLog(@"this is version1.1");
 }
 
 - (void)testVersion_1_1 {
+//=======
+    NSLog(@"this is branch  version1.2");
+}
+
+- (void)testVersion_1_2 {
+//>>>>>>> 0b0823ed91ccbe60de44d5189fd2a3fd25e52a65
     
 }
 

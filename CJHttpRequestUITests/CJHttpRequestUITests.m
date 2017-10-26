@@ -32,7 +32,7 @@
 }
 
 - (void)testVersion_1_2 {
-    
+    NSLog(@"testVersion_1_2");
 }
 
 - (void)tearDown {

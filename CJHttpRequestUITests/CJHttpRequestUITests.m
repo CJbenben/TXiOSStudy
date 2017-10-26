@@ -32,7 +32,7 @@
 }
 
 - (void)testVersion_1_1 {
-    NSLog(@"this is branch  version1.2");
+    NSLog(@"this is branch  version1.1");
 }
 
 - (void)tearDown {

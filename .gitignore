@@ -1,1 +1,9 @@
+
 #add gitignore file
+
+
+.DS_Store
+CJHttpRequest.xcodeproj/project.xcworkspace/xcuserdata/
+CJHttpRequest/.DS_Store
+CJHttpRequest/Vendors/.DS_Store
+

@@ -18,6 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     // 我在 version1.1 分支测试代码
+    // 今天添加了.gitignore 文件
     return YES;
 }
 

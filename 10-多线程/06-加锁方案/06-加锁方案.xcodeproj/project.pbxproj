@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7DE90B5326F0465800A78745 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE90B5226F0465800A78745 /* AppDelegate.m */; };
+		7DE90B5626F0465800A78745 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE90B5526F0465800A78745 /* SceneDelegate.m */; };
+		7DE90B5926F0465800A78745 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE90B5826F0465800A78745 /* ViewController.m */; };
+		7DE90B5C26F0465800A78745 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DE90B5A26F0465800A78745 /* Main.storyboard */; };
+		7DE90B5E26F0465B00A78745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DE90B5D26F0465B00A78745 /* Assets.xcassets */; };
+		7DE90B6126F0465B00A78745 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DE90B5F26F0465B00A78745 /* LaunchScreen.storyboard */; };
+		7DE90B6426F0465B00A78745 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE90B6326F0465B00A78745 /* main.m */; };
+		7DE90B6B26F0500A00A78745 /* OSSpinLock方案.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE90B6A26F0500900A78745 /* OSSpinLock方案.png */; };
+		7DE90B6F26F06E3B00A78745 /* TXBaseDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE90B6E26F06E3B00A78745 /* TXBaseDemo.m */; };
+		7DE90B7226F0704E00A78745 /* OSSpinLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE90B7126F0704E00A78745 /* OSSpinLockDemo.m */; };
+		7DE90B7426F19E7C00A78745 /* 线程同步方案.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE90B7326F19E7C00A78745 /* 线程同步方案.png */; };
+		7DE90B7726F19F1800A78745 /* OSUnfairLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE90B7626F19F1800A78745 /* OSUnfairLockDemo.m */; };
+		7DE90B7926F1A07C00A78745 /* OSUnfairLock方案.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE90B7826F1A07C00A78745 /* OSUnfairLock方案.png */; };
+		7DE90B7C26F1A0E600A78745 /* MutexDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE90B7B26F1A0E600A78745 /* MutexDemo.m */; };
+		7DE90B8226F1BEE700A78745 /* MutexDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE90B8026F1BEE700A78745 /* MutexDemo2.m */; };
+		7DE90B8426F1C2C700A78745 /* pthread_mutex.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE90B8326F1C2C700A78745 /* pthread_mutex.png */; };
+		7DE90B8726F1C73800A78745 /* MutexDemo3.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE90B8626F1C73800A78745 /* MutexDemo3.m */; };
+		7DE90B8926F1CC3000A78745 /* pthread_mutex_条件.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE90B8826F1CC3000A78745 /* pthread_mutex_条件.png */; };
+		7DE90B8C26F1CCC800A78745 /* NSLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE90B8B26F1CCC800A78745 /* NSLockDemo.m */; };
+		7DE90B8E26F1CE4000A78745 /* NSLock\NSRecursiveLock.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE90B8D26F1CE4000A78745 /* NSLock\NSRecursiveLock.png */; };
+		7DE90B9126F1CE8F00A78745 /* NSConditionDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE90B9026F1CE8F00A78745 /* NSConditionDemo.m */; };
+		7DE90B9326F1D1BA00A78745 /* NSCondition.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE90B9226F1D1BA00A78745 /* NSCondition.png */; };
+		7DE90B9626F1DB7600A78745 /* NSConditionLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE90B9526F1DB7600A78745 /* NSConditionLockDemo.m */; };
+		7DEFF36A26F4422900C2607A /* 性能比较.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DEFF36926F4422900C2607A /* 性能比较.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7DE90B4E26F0465800A78745 /* 06-加锁方案.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "06-加锁方案.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DE90B5126F0465800A78745 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7DE90B5226F0465800A78745 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7DE90B5426F0465800A78745 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		7DE90B5526F0465800A78745 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		7DE90B5726F0465800A78745 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7DE90B5826F0465800A78745 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7DE90B5B26F0465800A78745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7DE90B5D26F0465B00A78745 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7DE90B6026F0465B00A78745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7DE90B6226F0465B00A78745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DE90B6326F0465B00A78745 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7DE90B6A26F0500900A78745 /* OSSpinLock方案.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OSSpinLock方案.png"; sourceTree = "<group>"; };
+		7DE90B6D26F06E3B00A78745 /* TXBaseDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXBaseDemo.h; sourceTree = "<group>"; };
+		7DE90B6E26F06E3B00A78745 /* TXBaseDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXBaseDemo.m; sourceTree = "<group>"; };
+		7DE90B7026F0704E00A78745 /* OSSpinLockDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSpinLockDemo.h; sourceTree = "<group>"; };
+		7DE90B7126F0704E00A78745 /* OSSpinLockDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSSpinLockDemo.m; sourceTree = "<group>"; };
+		7DE90B7326F19E7C00A78745 /* 线程同步方案.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "线程同步方案.png"; sourceTree = "<group>"; };
+		7DE90B7526F19F1800A78745 /* OSUnfairLockDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSUnfairLockDemo.h; sourceTree = "<group>"; };
+		7DE90B7626F19F1800A78745 /* OSUnfairLockDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSUnfairLockDemo.m; sourceTree = "<group>"; };
+		7DE90B7826F1A07C00A78745 /* OSUnfairLock方案.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OSUnfairLock方案.png"; sourceTree = "<group>"; };
+		7DE90B7A26F1A0E600A78745 /* MutexDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutexDemo.h; sourceTree = "<group>"; };
+		7DE90B7B26F1A0E600A78745 /* MutexDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MutexDemo.m; sourceTree = "<group>"; };
+		7DE90B8026F1BEE700A78745 /* MutexDemo2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutexDemo2.m; sourceTree = "<group>"; };
+		7DE90B8126F1BEE700A78745 /* MutexDemo2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutexDemo2.h; sourceTree = "<group>"; };
+		7DE90B8326F1C2C700A78745 /* pthread_mutex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pthread_mutex.png; sourceTree = "<group>"; };
+		7DE90B8526F1C73800A78745 /* MutexDemo3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutexDemo3.h; sourceTree = "<group>"; };
+		7DE90B8626F1C73800A78745 /* MutexDemo3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MutexDemo3.m; sourceTree = "<group>"; };
+		7DE90B8826F1CC3000A78745 /* pthread_mutex_条件.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pthread_mutex_条件.png"; sourceTree = "<group>"; };
+		7DE90B8A26F1CCC800A78745 /* NSLockDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSLockDemo.h; sourceTree = "<group>"; };
+		7DE90B8B26F1CCC800A78745 /* NSLockDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSLockDemo.m; sourceTree = "<group>"; };
+		7DE90B8D26F1CE4000A78745 /* NSLock\NSRecursiveLock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NSLock\\NSRecursiveLock.png"; sourceTree = "<group>"; };
+		7DE90B8F26F1CE8F00A78745 /* NSConditionDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSConditionDemo.h; sourceTree = "<group>"; };
+		7DE90B9026F1CE8F00A78745 /* NSConditionDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSConditionDemo.m; sourceTree = "<group>"; };
+		7DE90B9226F1D1BA00A78745 /* NSCondition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NSCondition.png; sourceTree = "<group>"; };
+		7DE90B9426F1DB7600A78745 /* NSConditionLockDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSConditionLockDemo.h; sourceTree = "<group>"; };
+		7DE90B9526F1DB7600A78745 /* NSConditionLockDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSConditionLockDemo.m; sourceTree = "<group>"; };
+		7DEFF36926F4422900C2607A /* 性能比较.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "性能比较.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7DE90B4B26F0465800A78745 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7DE90B4526F0465800A78745 = {
+			isa = PBXGroup;
+			children = (
+				7DE90B5026F0465800A78745 /* 06-加锁方案 */,
+				7DE90B4F26F0465800A78745 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7DE90B4F26F0465800A78745 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7DE90B4E26F0465800A78745 /* 06-加锁方案.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DE90B5026F0465800A78745 /* 06-加锁方案 */ = {
+			isa = PBXGroup;
+			children = (
+				7DE90B5126F0465800A78745 /* AppDelegate.h */,
+				7DE90B5226F0465800A78745 /* AppDelegate.m */,
+				7DE90B5426F0465800A78745 /* SceneDelegate.h */,
+				7DE90B5526F0465800A78745 /* SceneDelegate.m */,
+				7DE90B5726F0465800A78745 /* ViewController.h */,
+				7DE90B5826F0465800A78745 /* ViewController.m */,
+				7DE90B6C26F06E1B00A78745 /* Locks */,
+				7DE90B5A26F0465800A78745 /* Main.storyboard */,
+				7DE90B5D26F0465B00A78745 /* Assets.xcassets */,
+				7DE90B5F26F0465B00A78745 /* LaunchScreen.storyboard */,
+				7DE90B6226F0465B00A78745 /* Info.plist */,
+				7DE90B6326F0465B00A78745 /* main.m */,
+			);
+			path = "06-加锁方案";
+			sourceTree = "<group>";
+		};
+		7DE90B6C26F06E1B00A78745 /* Locks */ = {
+			isa = PBXGroup;
+			children = (
+				7DE90B7326F19E7C00A78745 /* 线程同步方案.png */,
+				7DE90B6D26F06E3B00A78745 /* TXBaseDemo.h */,
+				7DE90B6E26F06E3B00A78745 /* TXBaseDemo.m */,
+				7DE90B7026F0704E00A78745 /* OSSpinLockDemo.h */,
+				7DE90B7126F0704E00A78745 /* OSSpinLockDemo.m */,
+				7DE90B6A26F0500900A78745 /* OSSpinLock方案.png */,
+				7DE90B7526F19F1800A78745 /* OSUnfairLockDemo.h */,
+				7DE90B7626F19F1800A78745 /* OSUnfairLockDemo.m */,
+				7DE90B7826F1A07C00A78745 /* OSUnfairLock方案.png */,
+				7DE90B7A26F1A0E600A78745 /* MutexDemo.h */,
+				7DE90B7B26F1A0E600A78745 /* MutexDemo.m */,
+				7DE90B8126F1BEE700A78745 /* MutexDemo2.h */,
+				7DE90B8026F1BEE700A78745 /* MutexDemo2.m */,
+				7DE90B8526F1C73800A78745 /* MutexDemo3.h */,
+				7DE90B8626F1C73800A78745 /* MutexDemo3.m */,
+				7DE90B8326F1C2C700A78745 /* pthread_mutex.png */,
+				7DE90B8826F1CC3000A78745 /* pthread_mutex_条件.png */,
+				7DE90B8A26F1CCC800A78745 /* NSLockDemo.h */,
+				7DE90B8B26F1CCC800A78745 /* NSLockDemo.m */,
+				7DE90B8D26F1CE4000A78745 /* NSLock\NSRecursiveLock.png */,
+				7DE90B8F26F1CE8F00A78745 /* NSConditionDemo.h */,
+				7DE90B9026F1CE8F00A78745 /* NSConditionDemo.m */,
+				7DE90B9226F1D1BA00A78745 /* NSCondition.png */,
+				7DE90B9426F1DB7600A78745 /* NSConditionLockDemo.h */,
+				7DE90B9526F1DB7600A78745 /* NSConditionLockDemo.m */,
+				7DEFF36926F4422900C2607A /* 性能比较.png */,
+			);
+			path = Locks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7DE90B4D26F0465800A78745 /* 06-加锁方案 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DE90B6726F0465B00A78745 /* Build configuration list for PBXNativeTarget "06-加锁方案" */;
+			buildPhases = (
+				7DE90B4A26F0465800A78745 /* Sources */,
+				7DE90B4B26F0465800A78745 /* Frameworks */,
+				7DE90B4C26F0465800A78745 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "06-加锁方案";
+			productName = "04-多线程带来的安全隐患";
+			productReference = 7DE90B4E26F0465800A78745 /* 06-加锁方案.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7DE90B4626F0465800A78745 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					7DE90B4D26F0465800A78745 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = 7DE90B4926F0465800A78745 /* Build configuration list for PBXProject "06-加锁方案" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7DE90B4526F0465800A78745;
+			productRefGroup = 7DE90B4F26F0465800A78745 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DE90B4D26F0465800A78745 /* 06-加锁方案 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7DE90B4C26F0465800A78745 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DE90B8426F1C2C700A78745 /* pthread_mutex.png in Resources */,
+				7DE90B9326F1D1BA00A78745 /* NSCondition.png in Resources */,
+				7DE90B8E26F1CE4000A78745 /* NSLock\NSRecursiveLock.png in Resources */,
+				7DE90B7926F1A07C00A78745 /* OSUnfairLock方案.png in Resources */,
+				7DE90B6126F0465B00A78745 /* LaunchScreen.storyboard in Resources */,
+				7DE90B7426F19E7C00A78745 /* 线程同步方案.png in Resources */,
+				7DE90B6B26F0500A00A78745 /* OSSpinLock方案.png in Resources */,
+				7DEFF36A26F4422900C2607A /* 性能比较.png in Resources */,
+				7DE90B5E26F0465B00A78745 /* Assets.xcassets in Resources */,
+				7DE90B8926F1CC3000A78745 /* pthread_mutex_条件.png in Resources */,
+				7DE90B5C26F0465800A78745 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7DE90B4A26F0465800A78745 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DE90B8726F1C73800A78745 /* MutexDemo3.m in Sources */,
+				7DE90B9626F1DB7600A78745 /* NSConditionLockDemo.m in Sources */,
+				7DE90B7726F19F1800A78745 /* OSUnfairLockDemo.m in Sources */,
+				7DE90B5926F0465800A78745 /* ViewController.m in Sources */,
+				7DE90B5326F0465800A78745 /* AppDelegate.m in Sources */,
+				7DE90B8226F1BEE700A78745 /* MutexDemo2.m in Sources */,
+				7DE90B9126F1CE8F00A78745 /* NSConditionDemo.m in Sources */,
+				7DE90B6426F0465B00A78745 /* main.m in Sources */,
+				7DE90B6F26F06E3B00A78745 /* TXBaseDemo.m in Sources */,
+				7DE90B5626F0465800A78745 /* SceneDelegate.m in Sources */,
+				7DE90B7C26F1A0E600A78745 /* MutexDemo.m in Sources */,
+				7DE90B7226F0704E00A78745 /* OSSpinLockDemo.m in Sources */,
+				7DE90B8C26F1CCC800A78745 /* NSLockDemo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7DE90B5A26F0465800A78745 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DE90B5B26F0465800A78745 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7DE90B5F26F0465B00A78745 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DE90B6026F0465B00A78745 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7DE90B6526F0465B00A78745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7DE90B6626F0465B00A78745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7DE90B6826F0465B00A78745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T7C7TQD6VN;
+				INFOPLIST_FILE = "06-加锁方案/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "www.zghx.com.-4-----------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7DE90B6926F0465B00A78745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T7C7TQD6VN;
+				INFOPLIST_FILE = "06-加锁方案/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "www.zghx.com.-4-----------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7DE90B4926F0465800A78745 /* Build configuration list for PBXProject "06-加锁方案" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DE90B6526F0465B00A78745 /* Debug */,
+				7DE90B6626F0465B00A78745 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DE90B6726F0465B00A78745 /* Build configuration list for PBXNativeTarget "06-加锁方案" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DE90B6826F0465B00A78745 /* Debug */,
+				7DE90B6926F0465B00A78745 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7DE90B4626F0465800A78745 /* Project object */;
+}

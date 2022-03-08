@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>items</key>
+    <array>
+        <dict>
+            <key>assets</key>
+            <array>
+                <dict>
+                    <key>kind</key>
+                    <string>software-package</string>
+                    <key>url</key>
+                    <string>https://lv-img.oss-cn-hangzhou.aliyuncs.com/%E8%8A%B1%E7%8C%AB%E4%BA%91%E5%95%86.ipa</string>
+                </dict>
+                <dict>
+                    <key>kind</key>
+                    <string>full-size-image</string>
+                    <key>needs-shine</key>
+                    <false/>
+                    <key>url</key>
+                    <string>下载时大图（非必填）</string>
+                </dict>
+                <dict>
+                    <key>kind</key>
+                    <string>display-image</string>
+                    <key>needs-shine</key>
+                    <false/>
+                    <key>url</key>
+                    <string>下载时小图（非必填）</string>
+                </dict>
+            </array>
+            <key>metadata</key>
+            <dict>
+                <key>bundle-identifier</key>
+                <string>com.szgreenleaf.hmys</string>
+                <key>bundle-version</key>
+                <string>HMYS_version</string>
+                <key>kind</key>
+                <string>software</string>
+                <key>subtitle</key>
+                <string>HMYS_subtitle</string>
+                <key>title</key>
+                <string>花猫云商</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>

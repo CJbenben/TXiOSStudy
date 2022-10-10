@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D3E782D26AF99FB00606B4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3E782C26AF99FB00606B4E /* main.m */; };
+		7D6C191227D740FF00531B98 /* NSObject+TXAvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6C191127D740FF00531B98 /* NSObject+TXAvoidCrash.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		7D3E782926AF99FB00606B4E /* 01-KVC基本使用 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "01-KVC基本使用"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3E782C26AF99FB00606B4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7D6C191027D740FF00531B98 /* NSObject+TXAvoidCrash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+TXAvoidCrash.h"; sourceTree = "<group>"; };
+		7D6C191127D740FF00531B98 /* NSObject+TXAvoidCrash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TXAvoidCrash.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				7D3E782C26AF99FB00606B4E /* main.m */,
+				7D6C191027D740FF00531B98 /* NSObject+TXAvoidCrash.h */,
+				7D6C191127D740FF00531B98 /* NSObject+TXAvoidCrash.m */,
 			);
 			path = "01-KVC基本使用";
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D3E782D26AF99FB00606B4E /* main.m in Sources */,
+				7D6C191227D740FF00531B98 /* NSObject+TXAvoidCrash.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,7 +30,7 @@
     
     [self ticketTest];
     
-    [self moneyTest];
+//    [self moneyTest];
 }
 
 

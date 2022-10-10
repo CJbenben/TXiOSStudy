@@ -19,9 +19,9 @@
     // Do any additional setup after loading the view.
     
     
-//    [self ticketTest];
+    [self ticketTest];
     
-    [self moneyTest];
+//    [self moneyTest];
 }
 
 

@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "BAAD6E67-CAA2-4DC0-A222-BF2C8EED6517"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "01-KVO&#x57fa;&#x672c;&#x4f7f;&#x7528;/ViewController.m"

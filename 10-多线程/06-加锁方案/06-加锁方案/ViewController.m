@@ -27,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.baseDemo = [[MutexDemo2 alloc] init];
+    self.baseDemo = [[NSConditionLockDemo alloc] init];
 //    [self.baseDemo moneyTest];
 //    [self.baseDemo ticketTest];
     [self.baseDemo otherTest];

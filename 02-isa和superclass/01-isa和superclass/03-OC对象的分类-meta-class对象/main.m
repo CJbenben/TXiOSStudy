@@ -12,14 +12,15 @@
 @interface Person : NSObject
 
 + (void)test;
+- (void)test;
 
 @end
 
 @implementation Person
 
-+ (void)test {
-    NSLog(@"+ [Person test] %p", self);
-}
+//+ (void)test {
+//    NSLog(@"+ [Person test] %p", self);
+//}
 
 //- (void)test {
 //    NSLog(@"- [Person test] %p", self);
@@ -29,6 +30,17 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+
+        Person *p = [[Person alloc] init];
+        NSObject *obj = [[NSObject alloc] init];
+        
+        NSLog(@"Person = %p", p);
+        NSLog(@"MSObject = %p", obj);
+        
+        [p test];
+        [obj test];
+        
+        
         NSLog(@"Person = %p", [Person class]);
         NSLog(@"MSObject = %p", [NSObject class]);
         

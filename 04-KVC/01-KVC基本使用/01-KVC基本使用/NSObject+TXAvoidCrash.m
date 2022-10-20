@@ -9,9 +9,9 @@
 
 @implementation NSObject (TXAvoidCrash)
 
-//- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
-//    NSLog(@"111111111111");
-//}
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+    NSLog(@"111111111111");
+}
 //
 //- (id)valueForUndefinedKey:(NSString *)key {
 //    return nil;

@@ -7,7 +7,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B0ED4416-CD5F-472E-8CD7-20FF053794CB"
+            uuid = "2A2012CA-3BA5-4BB4-AC95-B3EFA3A18899"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -23,7 +23,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C965A272-1707-4381-93E5-10A610A55A3B"
+            uuid = "74D750E6-7EE4-4983-88AD-A7A8968A45E0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"

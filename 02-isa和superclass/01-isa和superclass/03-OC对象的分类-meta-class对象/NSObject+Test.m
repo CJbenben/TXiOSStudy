@@ -9,9 +9,9 @@
 
 @implementation NSObject (Test)
 
-+ (void)test {
-    NSLog(@"+ [NSObject test] %p", self);
-}
+//+ (void)test {
+//    NSLog(@"+ [NSObject test] %p", self);
+//}
 
 - (void)test {
     NSLog(@"- [NSObject test] %p", self);

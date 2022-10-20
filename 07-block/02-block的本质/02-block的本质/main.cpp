@@ -34244,6 +34244,8 @@ struct NSUUID_IMPL {
 //  void *FuncPtr;// 存放 block 代码块代码的指针
 //};
 
+block实际上也是一个OC对象，那么里面也有一个isa指针
+block帮我们封装了一个函数调用，以及函数调用需要用OC对象
 
 struct __main_block_impl_0 {
   struct __block_impl impl;

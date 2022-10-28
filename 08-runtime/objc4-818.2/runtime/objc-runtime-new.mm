@@ -5934,6 +5934,7 @@ findMethodInSortedMethodList(SEL key, const method_list_t *list, const getNameFu
     uintptr_t keyValue = (uintptr_t)key;
     uint32_t count;
     
+    // 二分查找
     for (count = list->count; count != 0; count >>= 1) {
         probe = base + (count >> 1);
         
@@ -5996,15 +5997,18 @@ findMethodInUnsortedMethodList(SEL key, const method_list_t *list)
     }
 }
 
+// 方法搜索分两个阶段
 ALWAYS_INLINE static method_t *
 search_method_list_inline(const method_list_t *mlist, SEL sel)
 {
     int methodListIsFixedUp = mlist->isFixedUp();
     int methodListHasExpectedSize = mlist->isExpectedSize();
     
+    // 如果方法列表有序：二分查找
     if (fastpath(methodListIsFixedUp && methodListHasExpectedSize)) {
         return findMethodInSortedMethodList(sel, mlist);
     } else {
+        // 如果方法列表无序：便利查找
         // Linear search of unsorted method list
         if (auto *m = findMethodInUnsortedMethodList(sel, mlist))
             return m;
@@ -6075,6 +6079,7 @@ getMethodNoSuper_nolock(Class cls, SEL sel)
     // fixme nil cls? 
     // fixme nil sel?
 
+    // cls->data() 也就是 class_rw_t里面找到 methods 方法数组
     auto const methods = cls->data()->methods();
     for (auto mlists = methods.beginLists(),
               end = methods.endLists();
@@ -6213,6 +6218,7 @@ static void resolveClassMethod(id inst, SEL sel, Class cls)
 * cls may be a metaclass or a non-meta class.
 * Does not check if the method already exists.
 **********************************************************************/
+// 这里会调用我们自己写的 resolveInstanceMethod 方法
 static void resolveInstanceMethod(id inst, SEL sel, Class cls)
 {
     runtimeLock.assertUnlocked();
@@ -6257,6 +6263,7 @@ static void resolveInstanceMethod(id inst, SEL sel, Class cls)
 * Called with the runtimeLock held to avoid pressure in the caller
 * Tail calls into lookUpImpOrForward, also to avoid pressure in the callerb
 **********************************************************************/
+// 动态方法解析阶段
 static NEVER_INLINE IMP
 resolveMethod_locked(id inst, SEL sel, Class cls, int behavior)
 {
@@ -6265,10 +6272,12 @@ resolveMethod_locked(id inst, SEL sel, Class cls, int behavior)
 
     runtimeLock.unlock();
 
+    // 非元类的方法（对象方法）
     if (! cls->isMetaClass()) {
         // try [cls resolveInstanceMethod:sel]
         resolveInstanceMethod(inst, sel, cls);
-    } 
+    }
+    // 元类的方法（类方法）
     else {
         // try [nonMetaClass resolveClassMethod:sel]
         // and [cls resolveInstanceMethod:sel]
@@ -6392,6 +6401,7 @@ IMP lookUpImpOrNilTryCache(id inst, SEL sel, Class cls, int behavior)
 NEVER_INLINE
 IMP lookUpImpOrForward(id inst, SEL sel, Class cls, int behavior)
 {
+    // forward_imp：这个是消息转发阶段使用的方法
     const IMP forward_imp = (IMP)_objc_msgForward_impcache;
     IMP imp = nil;
     Class curClass;
@@ -6454,13 +6464,14 @@ IMP lookUpImpOrForward(id inst, SEL sel, Class cls, int behavior)
             curClass = curClass->cache.preoptFallbackClass();
 #endif
         } else {
+            // 在当前 class 里面查找 方法列表
             // curClass method list.
             Method meth = getMethodNoSuper_nolock(curClass, sel);
             if (meth) {
                 imp = meth->imp(false);
                 goto done;
             }
-
+            // 如果上面没有找到，这里会将 receiver 的父类复制给 curClass 再次遍历，直到找不到父类，imp为消息转发阶段
             if (slowpath((curClass = curClass->getSuperclass()) == nil)) {
                 // No implementation found, and method resolver didn't help.
                 // Use forwarding.
@@ -6474,6 +6485,7 @@ IMP lookUpImpOrForward(id inst, SEL sel, Class cls, int behavior)
             _objc_fatal("Memory corruption in class list.");
         }
 
+        // 在父类缓存中查找
         // Superclass cache.
         imp = cache_getImp(curClass, sel);
         if (slowpath(imp == forward_imp)) {
@@ -6483,11 +6495,12 @@ IMP lookUpImpOrForward(id inst, SEL sel, Class cls, int behavior)
             break;
         }
         if (fastpath(imp)) {
+            // 如果在父类缓存中找到了，还是缓存到 receiver 缓存中
             // Found the method in a superclass. Cache it in this class.
             goto done;
         }
     }
-
+    // 以上，第一阶段消息发送阶段完成，接下来，是动态方法解析阶段
     // No implementation found. Try method resolver once.
 
     if (slowpath(behavior & LOOKUP_RESOLVER)) {
@@ -6502,6 +6515,7 @@ IMP lookUpImpOrForward(id inst, SEL sel, Class cls, int behavior)
             cls = cls->cache.preoptFallbackClass();
         }
 #endif
+        // 将找到的方法缓存到 receiver 的缓存中
         log_and_fill_cache(cls, imp, sel, inst, curClass);
     }
  done_unlock:

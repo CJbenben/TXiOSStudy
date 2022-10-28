@@ -322,7 +322,8 @@ LExit$0:
 .abort oops
 .endif
 .endmacro
-
+        
+//注释：CacheLookup NORMAL, _objc_msgSend, __objc_msgSend_uncached
 .macro CacheLookup Mode, Function, MissLabelDynamic, MissLabelConstant
 	//
 	// Restart protocol:
@@ -389,8 +390,10 @@ LLookupStart\Function:
 	cmp	p9, p1				//     if (sel != _cmd) {
 	b.ne	3f				//         scan more
 						//     } else {
+    // 这个是在缓存中找到了
 2:	CacheHit \Mode				// hit:    call or return imp
 						//     }
+    // 如果没找到的话，执行 MissLabelDynamic 也就是参数（__objc_msgSend_uncached）这个方法
 3:	cbz	p9, \MissLabelDynamic		//     if (sel == 0) goto Miss;
 	cmp	p13, p10			// } while (bucket >= buckets)
 	b.hs	1b
@@ -548,9 +551,11 @@ _objc_debug_taggedpointer_classes:
 .endmacro
 #endif
 
+    // objc_msgSend调用入口
 	ENTRY _objc_msgSend
 	UNWIND _objc_msgSend, NoFrame
 
+    // 判断消息接收者 receiver 是否为 nil
 	cmp	p0, #0			// nil check and tagged pointer check
 #if SUPPORT_TAGGED_POINTERS
 	b.le	LNilOrTagged		//  (MSB tagged pointer looks negative)
@@ -560,6 +565,7 @@ _objc_debug_taggedpointer_classes:
 	ldr	p13, [x0]		// p13 = isa
 	GetClassFromIsa_p16 p13, 1, x0	// p16 = class
 LGetIsaDone:
+    // receiver 不为 nil，直接在缓存中查找
 	// calls imp or objc_msgSend_uncached
 	CacheLookup NORMAL, _objc_msgSend, __objc_msgSend_uncached
 
@@ -578,8 +584,9 @@ LReturnZero:
 	movi	d1, #0
 	movi	d2, #0
 	movi	d3, #0
-	ret
+	ret // 直接退出
 
+    // objc_msgSend调用结束
 	END_ENTRY _objc_msgSend
 
 
@@ -681,7 +688,8 @@ LMsgLookupSuperResume:
 	// receiver and selector already in x0 and x1
 	mov	x2, x16
 	mov	x3, #3
-	bl	_lookUpImpOrForward
+    // 调用这个方法
+	bl	_lookUpImpOrForward // （这是一个C语言函数，全局搜索 IMP lookUpImpOrForward）
 
 	// IMP in x0
 	mov	x17, x0
@@ -690,12 +698,14 @@ LMsgLookupSuperResume:
 
 .endmacro
 
+    // 缓存中没找到方法会执行
 	STATIC_ENTRY __objc_msgSend_uncached
 	UNWIND __objc_msgSend_uncached, FrameWithNoSaves
 
 	// THIS IS NOT A CALLABLE C FUNCTION
 	// Out-of-band p15 is the class to search
 	
+    // 调用这个方法
 	MethodTableLookup
 	TailCallFunctionPointer x17
 

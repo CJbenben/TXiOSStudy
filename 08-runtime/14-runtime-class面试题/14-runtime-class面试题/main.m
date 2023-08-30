@@ -34,6 +34,7 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        TXPerson *person = [TXPerson new];
         BOOL res1 = [[NSObject class] isKindOfClass:[NSObject class]];
         BOOL res2 = [[NSObject class] isMemberOfClass:[NSObject class]];
         BOOL res3 = [[TXPerson class] isKindOfClass:[TXPerson class]];

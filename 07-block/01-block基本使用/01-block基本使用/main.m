@@ -33,7 +33,7 @@ int main(int argc, const char * argv[]) {
 //        };
         
         int age = 20;
-        
+                           
         // 1.block 本质上也是一个 OC 对象，底层也是结构体（__main_block_impl_0），里面也有一个 isa 指针
         void (^block)(int, int) = ^(int a, int b) {
             NSLog(@"this is a block - %d", age);
